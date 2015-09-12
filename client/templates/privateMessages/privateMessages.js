@@ -14,7 +14,7 @@ Template.privateMessages.helpers({
 });
 
 Template.privateMessages.events({
-  'click li a': function (event) {
+  'click .list a': function (event) {
     event.preventDefault();
     Session.set('sent', Number(event.currentTarget.className === 'sent'));
   }

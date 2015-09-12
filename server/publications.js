@@ -24,6 +24,11 @@ Meteor.publish('privateMessages', function () {
   return PrivateMessages.find({$or: [{userId: this.userId}, {from: this.userId}] });
 });
 
+Meteor.publish('singlePrivateMessage', function(pmId) {
+  check(pmId, String);
+  return PrivateMessages.find(pmId);
+});
+
 Meteor.publish('userPresence', function() {
   // Setup some filter to find the users your user
   // cares about. It's unlikely that you want to publish the 
