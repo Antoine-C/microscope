@@ -18,6 +18,9 @@
           <a href="{{pathFor 'bestPosts'}}">Best</a>
         </li>
         {{#if currentUser}}
+          <li class="{{activeRouteClass  'privateMessages'}}">
+            <a href="{{pathFor 'privateMessages'}}">Private messages</a>
+          </li>
           <li class="{{activeRouteClass 'postSubmit'}}">
             <a href="{{pathFor 'postSubmit'}}">Submit Post</a>
           </li>

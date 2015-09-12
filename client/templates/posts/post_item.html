@@ -1,11 +1,16 @@
 <template name="postItem">
   <div class="post">
-    <a href="#" class="upvote btn btn-default {{upvotedClass}}">⬆</a>
-    <div class="post-content">
+    <div class="col-xs-3">
+      <a href="#" class="upvote btn btn-default {{upvotedClass}}">&uparrow;</a>
+      <a href="#" class="downvote btn btn-danger {{downvotedClass}}">&downarrow;</a>
+    </div>
+    <div class="post-content col-xs-7">
       <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
       <p>
-        {{pluralize votes "Vote"}},
-        submitted by {{author}},
+        {{pluralize upvotes "Up vote"}} /
+        {{pluralize downvotes "Down vote"}}, 
+        submitted by <span class="author">{{author}}</span> 
+        <span class="status {{#if isLoggedIn}} online {{else}} offline {{/if}}"></span>,
         <a href="{{pathFor 'postPage'}}">{{pluralize commentsCount "comment"}}</a>
         {{#if ownPost}}<a href="{{pathFor 'postEdit'}}">Edit</a>{{/if}}
       </p>

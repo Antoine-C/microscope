@@ -12,3 +12,7 @@ accounts-password
 ian:accounts-ui-bootstrap-3
 audit-argument-checks
 
+tap:i18n
+fourseven:scss
+tmeasday:presence
+tinytest
